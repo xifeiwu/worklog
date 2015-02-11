@@ -1,0 +1,24 @@
+应用注册实现：
+一、在demo-rio/nodewebkit/backend/app/default/App.list下加入注册信息：
+
+  "feedback": {
+    "id": "feedback-app",
+    "path": "demo-rio/feedback"
+  },
+
+二、在demo-rio目录下加入feedback项目
+package.json
+{
+  "name": "feedback",
+  "main": "http://192.168.160.16:8088/index.html",
+  "window": {
+    "frame": true,
+    "toolbar": false,
+    "icon": "images/feedback.jpg",
+    "width": 800,
+    "height": 500
+
+  },
+  "url": true
+}
+
