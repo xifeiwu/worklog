@@ -8,3 +8,6 @@
 二、cowsay，mint17已装
 cowsay "haha"
 cowsay -l查看其它动物的名字，加-f制定动物名。
+三、修改路由
+ip route del default
+ip route add -net default gw 124.16.141.129
