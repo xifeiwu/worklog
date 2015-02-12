@@ -5,9 +5,35 @@
 运行方法：
 #nohup program &
 现在就可以正常关闭ssh了，你会发现你的服务依然存在运行
+
 二、cowsay，mint17已装
 cowsay "haha"
 cowsay -l查看其它动物的名字，加-f制定动物名。
+
 三、修改路由
 ip route del default
 ip route add -net default gw 124.16.141.129
+
+四、根据后缀名设置默认打开程序：mdg-mime
+1. xdg-mime --manual
+查看用户使用手册
+2. --mode
+root权限默认为系统模式，非root权限默认为用户模式。
+3. 更多选项请用命令1查看。
+
+五、NVIDIA显卡驱动在COS下的安装方法(在兆芯开发板上集成进原始的LinuxMint镜像中)：
+0,切换root用户
+sudo su
+1,更改显卡驱动的执行权限：
+chmod 777 NVIDIA-Linux-x86-325.05.14.run
+2,禁用系统自带的nouveau驱动
+a,vim /etc/default/grub，找到 GRUB_CMDLINE_LINUX_DEFAULT这一行，将原来的
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"改为GRUB_CMDLINE_LINUX_DEFAULT="nouveau.blacklist=1 quiet splash"
+增加nouveau.blacklist=1
+b,更新grub
+update-grub2
+3,reboot，这时系统应进入无NVIDIA显卡驱动阶段
+4,禁用X server
+service mdm stop
+5,按ctrl+alt+F1，进入新的tty，切换到NVIDIA-Linux-x86-325.05.14.run文件的目录下，执行安装
+./NVIDIA-Linux-x86-325.05.14.run
