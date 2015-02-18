@@ -65,3 +65,4 @@ Description: Minimal core of Ubuntu
 
 七、kvm需要开启cpu的vm
 kvm -m 512 -cdrom *.iso -boot order=d
+羊年到了，祝您在新的一年做人杨眉吐气，前程阳关大道，烦恼扬长而去，羊年洋洋得意！～_～吴西飞
