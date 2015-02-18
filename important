@@ -37,3 +37,31 @@ update-grub2
 service mdm stop
 5,按ctrl+alt+F1，进入新的tty，切换到NVIDIA-Linux-x86-325.05.14.run文件的目录下，执行安装
 ./NVIDIA-Linux-x86-325.05.14.run
+
+六、ubuntu-minimal、debootstrap、squashfs-tools
+cos@cos-pc ~ $ dpkg -s ubuntu-minimal
+Package: ubuntu-minimal
+Status: install ok installed
+Priority: optional
+Section: metapackages
+Installed-Size: 60
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: i386
+Source: ubuntu-meta
+Version: 1.325
+Depends: adduser, apt, apt-utils, bzip2, console-setup, debconf, debconf-i18n, eject, gnupg, ifupdown, initramfs-tools, iproute2, iputils-ping, isc-dhcp-client, kbd, kmod, less, locales, lsb-release, makedev, mawk, net-tools, netbase, netcat-openbsd, ntpdate, passwd, procps, python3, resolvconf, rsyslog, sudo, tzdata, ubuntu-keyring, udev, upstart, ureadahead, vim-tiny, whiptail
+Description: Minimal core of Ubuntu
+ This package depends on all of the packages in the Ubuntu minimal system,
+ that is a functional command-line system with the following capabilities:
+ .
+  - Boot
+  - Detect hardware
+  - Connect to a network
+  - Install packages
+  - Perform basic diagnostics
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed
+
+七、kvm需要开启cpu的vm
+kvm -m 512 -cdrom *.iso -boot order=d
