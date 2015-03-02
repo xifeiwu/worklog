@@ -1,4 +1,4 @@
-一、ssh 关闭后仍保持当前运行的进程
+﻿一、ssh 关闭后仍保持当前运行的进程
 由于各种原因，需要通过ssh登录linux或者unix主机，很多时候我们需要通过ssh的终端启动一 些服务或者运行一些程序，但是默认情况下，当我们关闭ssh终端连接，随之启动的程序也会关闭。原因是：SSH会话关闭时，ssh所关联的pty关闭，系 统会给这个pty所关联的session中的所有进程发送SIGHUP信号，SIGHUP的默认信号处理程序是终止进程，除非进程自己处理了 SIGHUP。
 解决方法如下：
 使用现成的命令nohup，可以让指定的程序在pty关闭之后继续运行。
@@ -41,3 +41,33 @@ service mdm stop
 六、use apt locally
 dpkg-scanpackages frequently-used-debs-Mint17/ /dev/null | gzip > package.gz
 add to /etc/apt/source.list: deb file:/root debs/
+
+七、ubuntu-minimal、debootstrap、squashfs-tools
+cos@cos-pc ~ $ dpkg -s ubuntu-minimal
+Package: ubuntu-minimal
+Status: install ok installed
+Priority: optional
+Section: metapackages
+Installed-Size: 60
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: i386
+Source: ubuntu-meta
+Version: 1.325
+Depends: adduser, apt, apt-utils, bzip2, console-setup, debconf, debconf-i18n, eject, gnupg, ifupdown, initramfs-tools, iproute2, iputils-ping, isc-dhcp-client, kbd, kmod, less, locales, lsb-release, makedev, mawk, net-tools, netbase, netcat-openbsd, ntpdate, passwd, procps, python3, resolvconf, rsyslog, sudo, tzdata, ubuntu-keyring, udev, upstart, ureadahead, vim-tiny, whiptail
+Description: Minimal core of Ubuntu
+ This package depends on all of the packages in the Ubuntu minimal system,
+ that is a functional command-line system with the following capabilities:
+ .
+  - Boot
+  - Detect hardware
+  - Connect to a network
+  - Install packages
+  - Perform basic diagnostics
+ .
+ It is also used to help ensure proper upgrades, so it is recommended that
+ it not be removed
+
+八、kvm需要开启cpu的vm
+kvm -m 512 -cdrom *.iso -boot order=d
+羊年到了，祝您在新的一年做人杨眉吐气，前程阳关大道，烦恼扬长而去，生活喜气洋洋！～_～吴西飞
+钢铁师团
