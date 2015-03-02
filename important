@@ -37,3 +37,7 @@ update-grub2
 service mdm stop
 5,按ctrl+alt+F1，进入新的tty，切换到NVIDIA-Linux-x86-325.05.14.run文件的目录下，执行安装
 ./NVIDIA-Linux-x86-325.05.14.run
+
+六、use apt locally
+dpkg-scanpackages frequently-used-debs-Mint17/ /dev/null | gzip > package.gz
+add to /etc/apt/source.list: deb file:/root debs/

@@ -1,0 +1,11 @@
+查看单个文件的修改历史
+git log -p path-to-file
+
+查看某开发者的所有提交
+git log --author=the-author
+
+git subtree pull --prefix=HybridApp HybridApp master
+git subtree push --prefix=HybridApp HybridApp master
+
+在提交历史用永久删除文件
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path-to-your-remove-file' --prune-empty --tag-name-filter cat -- --all
