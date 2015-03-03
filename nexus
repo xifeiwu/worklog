@@ -1,0 +1,38 @@
+Nexus安装Android系统
+出自：https://developers.google.com/android/nexus，该网页提供了Google的nexus系列手机的驱动和安装包。
+驱动：Nexus Binaries
+安装包：Nexus Factory Images
+其中驱动主要用于在源码编译，安装包用于镜像安装。
+注意：网上很多android 5.0的安装包都是ROM包的形式，每个版本的Android系统都有对应的BASEBAND，只更新ROM包对应的内容而不更新BASEBAND，系统无法正常运行。google网站提供了升级系统需要的所有组件。
+
+下面的文字摘自镜像安装部分：
+Flashing Instructions
+
+To flash a device using one of the system images below (or one of your own), you need the fastboot tool. You can get the fastboot tool either:
+
+From a compiled version of the the Android Open Source Project.
+Or, from the platform-tools/ directory in the Android SDK. Be sure that you have the latest version of the Android SDK Platform-tools from the SDK Manager.
+Once you have the fastboot tool, add it to your PATH environment variable (the flash-all script below must be able to find it). Also be certain that you've set up USB access for your device, as described in the Using Hardware Devices guide.
+
+Caution: Flashing a new system image deletes all user data. Be certain to first backup any personal data such as photos.
+
+To flash a system image:
+
+Download the appropriate system image for your device below, then unzip it to a safe directory.
+Connect your device to your computer over USB.
+Start the device in fastboot mode with one of the following methods:
+Using the adb tool: With the device powered on, execute:
+adb reboot bootloader
+Using a key combo: Turn the device off, then turn it on and immediately hold down the relevant key combination for your device. For example, to put a Nexus 5 ("hammerhead") into fastboot mode, press and hold Volume Up + Volume Down + Power as the device begins booting up.
+If necessary, unlock the device's bootloader by running:
+fastboot oem unlock
+The target device will show you a confirmation screen. (This erases all data on the target device.)
+Open a terminal and navigate to the unzipped system image directory.
+Execute the flash-all script. This script installs the necessary bootloader, baseband firmware(s), and operating system.
+Once the script finishes, your device reboots. You should now lock the bootloader for security:
+
+Start the device in fastboot mode again, as described above.
+Execute:
+fastboot oem lock
+Locking the bootloader does not wipe any data, but when you want to flash it again, you must run fastboot oem unlock again, which will wipe the data.
+
