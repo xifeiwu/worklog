@@ -2,14 +2,49 @@
 软硬件适配典型案例
 1、Mac系统
 https://www.apple.com/cn/macbook-air/specs.html
-2、联想针对笔记本的电源管理
+macbook pro 13英寸装了win7系统后待机时间只有3个小时；而在Mac OS X系统下，他的待机时间能达到6-7个小时。这是因为windows 7下的机器需要运行大量的浮点运算，而Mac OS下机器不会有那么大的计算量，这个直接决定了发热量，也决定了耗电量。
 
-Linux发型版软硬件适配思路
-1、架构
-2、源码
+2、联想针对笔记本的电源管理
+联想笔记本的主板一般是联想设计或生产，联想官网可以下载电源管理软件。使用电源管理软件可以调节电脑的工作状态，从而在使用笔记本电池的情况下降低功耗。
+
+个人理解的原因
+1、优化的硬件设计
+Mac的大部分硬件都是由苹果公司设计生产，包括CPU、主板、显示器、键鼠等[5]。
+不能自己设计生产的，苹果一般通过自己的影响力，要求第三方厂商定做更符合自己产品特性和需要的硬件，如，新款MacBook Air使用的Intel Haswell处理器[6,7,8,9]，Power Mac G4电脑中使用的NVIDIA GeForce2 MX显卡。
+通过这些，苹果可以实现更协调高效的硬件环境，也为软件产品在这些硬件环境上的优化奠定了基础。
+实现这些的前提是对硬件性能的充分了解，才能为第三方厂商提出合理可行的硬件需求。苹果公司在硬件产品的设计上本身就有较强的技术实力。
+像苹果自主设计的A系列芯片[10]在移动设备上已经就有了很强的竞争力[11]，并且在PC平台上努力设计Intel CPU的替代产品[12,13]。
+
+2、良好的软件适配
+苹果是唯一一家针对移动设备、笔记本、PC设备同时设计生产硬件和软件的厂商，对硬件性能的深入了解为良好的软件适配奠定了基础。
+同时苹果的软件产品主要针对自己的硬件平台，单一的硬件环境也减少了软件适配的工作量和难度。Mac系统是苹果机专用系统，正常情况下在普通PC上无法安装的操作系统。
+针对众多硬件平台的“大一统”的操作系统（如windows、众多linux发型版）很难实现理想的软硬件适配。
+
+3、持久的经验积累
+不论在硬件设计还是软件开发，苹果公司都有了相当长了经验积累。
+最早在苹果Macintosh设备上使用的System 1.0系统是在1984年1月24日[14]。Mac OS系统最早的8.0版是在1997年7月26日，最新的OS X Yosemite发布于2014年6月2日[15]，苹果公司用在Mac OS上的开发与改进已经持续了近二十年。持久的经验积累才能带来开发效率的提高，生产出精益求精的产品。
+
+Linux桌面发型版软硬件适配思路
+Linux桌面发型版数量众多，比较主流的是Ubuntu及Ubuntu的衍生版本，如Mint。Ubuntu14.04有1842个安装包，Mint17基于Ubuntu14.04，大部分是Ubuntu的软件包，其中Mint官方的软件包大约四十个。
+相当Mac OS只针对苹果自身的硬件，Linux Mint属于“大一统”的操作系统，可以针对众多的台式机和笔记本上安装，故针对硬件平台的驱动一般使用的是通用驱动。
+1、内核及驱动
+2、系统层
 
 
 46030mWh
+[4]http://www.enet.com.cn/article/2012/0626/A20120626127779.shtml
+[5]http://baike.baidu.com/subview/32702/4924693.htm
+[6]http://www.imore.com/so-whats-big-deal-haswell-anyway
+[7]http://www.macworld.com/article/2041397/haswell-what-intel-s-new-processor-promises-for-mac-users.html
+[8]http://www.zhihu.com/question/21124932
+[9]http://www.zhihu.com/question/21186805
+[10]http://baike.baidu.com/view/3445998.htm
+[11]http://www.feng.com/Story/Apple-A-series-chip-to-allow-competitors-Jiaokubudie_600053.shtml
+[12]http://www.36kr.com/p/167327.html?preview=wechat
+[13]http://www.iapps.im/single/24765
+[14]http://zh.wikipedia.org/zh/Mac_OS
+[15]http://zh.wikipedia.org/wiki/OS_X_Yosemite
+
 http://club.lenovo.com.cn/idea/forum/forum.php?mod=viewthread&tid=38742
 http://roll.sohu.com/20130613/n378714782.shtml
 http://digi.ifeng.com/nbook/evaluation/detail_2014_05/12/36268964_0.shtml
