@@ -1,0 +1,61 @@
+############# config ##################
+#
+# set base_path    /var/spool/apt-mirror
+#
+# set mirror_path  $base_path/mirror
+# set skel_path    $base_path/skel
+# set var_path     $base_path/var
+# set cleanscript $var_path/clean.sh
+# set defaultarch  <running host architecture>
+# set postmirror_script $var_path/postmirror.sh
+# set run_postmirror 0
+set nthreads     20
+set _tilde 0
+#
+ set base_path    /home/xifei/Music/repo
+
+ set mirror_path  $base_path/mirror
+ set skel_path    $base_path/skel
+ set var_path     $base_path/var
+ set cleanscript $var_path/clean.sh
+ set postmirror_script $var_path/postmirror.sh
+ set run_postmirror 0
+############# end config ##############
+
+deb http://mirrors.163.com/ubuntu trusty main restricted universe multiverse
+#deb http://mirrors.163.com/ubuntu trusty-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu trusty-updates main restricted universe multiverse
+#deb http://mirrors.163.com/ubuntu trusty-proposed main restricted universe multiverse
+#deb http://mirrors.163.com/ubuntu trusty-backports main restricted universe multiverse
+
+deb-src http://mirrors.163.com/ubuntu trusty main restricted universe multiverse
+#deb-src http://mirrors.163.com/ubuntu trusty-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu trusty-updates main restricted universe multiverse
+#deb-src http://mirrors.163.com/ubuntu trusty-proposed main restricted universe multiverse
+#deb-src http://mirrors.163.com/ubuntu trusty-backports main restricted universe multiverse
+
+clean http://mirrors.163.com/ubuntu
+
+deb http://mirrors.ustc.edu.cn/linuxmint rebecca main upstream import  #id:linuxmint_main
+deb-src http://mirrors.ustc.edu.cn/linuxmint rebecca main upstream import  #id:linuxmint_main
+deb http://extra.linuxmint.com rebecca main #id:linuxmint_extra
+
+
+
+deb http://mirrors.sohu.com/ubuntu trusty main restricted universe multiverse
+#deb http://mirrors.sohu.com/ubuntu trusty-security main restricted universe multiverse
+deb http://mirrors.sohu.com/ubuntu trusty-updates main restricted universe multiverse
+#deb http://mirrors.sohu.com/ubuntu trusty-proposed main restricted universe multiverse
+#deb http://mirrors.sohu.com/ubuntu trusty-backports main restricted universe multiverse
+
+deb-src http://mirrors.sohu.com/ubuntu trusty main restricted universe multiverse
+#deb-src http://mirrors.sohu.com/ubuntu trusty-security main restricted universe multiverse
+deb-src http://mirrors.sohu.com/ubuntu trusty-updates main restricted universe multiverse
+#deb-src http://mirrors.sohu.com/ubuntu trusty-proposed main restricted universe multiverse
+#deb-src http://mirrors.sohu.com/ubuntu trusty-backports main restricted universe multiverse
+
+clean http://mirrors.sohu.com/ubuntu
+
+deb http://mirrors.ustc.edu.cn/linuxmint rebecca main upstream import  #id:linuxmint_main
+deb-src http://mirrors.ustc.edu.cn/linuxmint rebecca main upstream import  #id:linuxmint_main
+deb http://extra.linuxmint.com rebecca main #id:linuxmint_extra

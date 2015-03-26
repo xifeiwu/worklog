@@ -1,0 +1,26 @@
+window.homeObj._entrances['192.168.5.243.7777']._data._remotedata
+window.homeObj._entrances['192.168.5.243.7777']._data._remotedata.getAllDataByCate
+window.homeObj._entrances['192.168.5.243.7777']._data._remotedata.sendrequest
+
+
+window.homeObj._entrances['192.168.5.243.7777']._data._remotedata.sendrequest = function (a, ar) {
+      var sd = {};
+      var cb = ar.shift();
+      sd.api = a;
+      sd.args = ar;
+      $.ajax({
+        url : "http://192.168.5.243:8888/callapi",
+        type : "post",
+        contentType : "application/json;charset=utf-8",
+        dataType : "json",
+        data : JSON.stringify(sd),
+        success : function(r) {
+          setTimeout(cb.apply(null, r), 0);
+        },
+        error : function(e) {
+          throw e;
+        }
+      });
+    };
+
+var origin;if(window.device_address){  origin=window.device_address;}else{  origin="";}
