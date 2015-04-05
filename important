@@ -71,3 +71,9 @@ Description: Minimal core of Ubuntu
 kvm -m 512 -cdrom *.iso -boot order=d
 羊年到了，祝您在新的一年做人杨眉吐气，前程阳关大道，烦恼扬长而去，生活喜气洋洋！～_～吴西飞
 钢铁师团
+
+九、搜狗输入法
+sudo add-apt-repository ppa:fcitx-team/nightly
+sudo apt-get update
+sudo apt-get install fcitx fcitx fcitx-bin fcitx-config-common fcitx-config-gtk fcitx-data fcitx-frontend-all fcitx-frontend-gtk3:amd64 fcitx-libs:amd64 fcitx-libs-gclient:amd64 fcitx-libs-qt:amd64 fcitx-module-cloudpinyin fcitx-module-dbus fcitx-module-kimpanel fcitx-module-x11 fcitx-modules fcitx-qimpanel-configtool fcitx-ui-classic fcitx-sogoupinyin sogoupinyin
+sudo im-config
