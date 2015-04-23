@@ -1,0 +1,4 @@
+repo
+REPO_URL = 'git://codeaurora.org/tools/repo.git'
+manifest.xml
+fetch="git://Android.git.linaro.org/"
