@@ -10,3 +10,4 @@ $("input[type='radio']#fb_class3").prop('checked', true);
 requirejs('/lib/api/data.js', function(data){
   console.log(data);
 });
+http://3g.hbswnews.com/a/shehui/4216.html
