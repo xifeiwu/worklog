@@ -75,6 +75,14 @@ kvm -m 512 -cdrom *.iso -boot order=d
 os_ibp@163.com
 ibp2013
 
+连班：早八点到晚六点，中间不休息。
+白班：早八点到晚六点，中间休息。
+夜班：晚六点到晚九点。
+下夜班：第一天晚六点二天四点到八点。上完夜班休息。
+
+7月11日
+五月二十八
+
 九、搜狗输入法
 sudo add-apt-repository ppa:fcitx-team/nightly
 sudo apt-get update
