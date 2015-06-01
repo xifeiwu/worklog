@@ -1,0 +1,155 @@
+目录：
+    1.使用流程--任务分配
+    2.使用流程--开发
+    3.使用流程--提出合并申请Pull Request
+    4.使用流程--Review
+    5.关于Issue
+    6.相关参考资料
+    7.FAQ
+
+1.使用流程--任务分配
+  1.1 在IbpTeam下的demo-rio中建立目的性更加清晰的分支
+
+  1.2 在IbpTeam下demo-rio中创建新issue，issue标题需有具体清晰准确的含义。
+    a) 创建issue时可根据其类型添加不同标签（支持添加多个标签）
+    b) issue建立时需在内容中进行较清晰准确的描述
+    c) issue建立时可以直接通过assign方式分派给相关开发人员，多人时可在内容中使用@xxx方式添加
+
+  1.3 当某一个Issue所描述内容已得到合理解决并完成，请及时关闭该Issue。
+        同时在关闭comment中简述解决结果如何。
+
+2.使用流程--开发（例如，所在开发分支dev，开发issue#295相关功能，提交pull request#297）
+  2.1 开发者通过repo将各个repository下载到本地机器中
+
+  2.2 刚下载的Repository中只有origin源，需添加自己远程仓库的源
+          git remote add yourself git@124.16.141.145:huyuanzhe/demo-rio.git
+
+  2.3 初始化完成并执行cmaster命令后，会默认切换到master分支上，需检出origin中其他分支
+          git fetch origin
+
+  2.4 新建开发分支，分支命名规则：br日期+功能点   如：br1201+实现xxx功能
+          git checkout -b br1201+实现xxx功能 origin/dev
+
+  2.5 在新分支上进行功能开发，尽量保证自己本地代码库与origin一致，时常对自己本地代码库的各分支进行更新操作
+          git pull origin dev
+
+  2.6 将所用分支推送一份至自己的远程源(如已有可跳过)
+          git push yourself  br1201+实现xxx功能
+
+  2.7开发工作都保证在dev分支上进行，并提交到自己远程源中暂存
+        git add xxx
+    git commit -m "message"
+    git push yourself br1201+实现xxx功能
+
+3.使用流程--提出合并申请Merge Request 
+  3.1 使用自己账户登陆GitLab
+
+  3.2 进入自己账户下demo-rio项目中
+
+  3.3 点击左侧菜单栏中Merge Requests后通过右上角New Merge Request进行MR提交申请。
+
+  3.4 创建合并请求时需将对比两个分支Source branch和Target branch选择为自己本地分支和Ibp Team的仓库中对应分支
+          Target branch为 IbpTeam:dev   Source branch 为 huyuanzhe:br1201+实现xxx功能
+
+       确定后点击compare branch按钮
+
+  3.5 Merge Request标题命名规则：清晰准确具体表达所提交修改的内容
+       如：单条 数据/文件 删除功能实现
+
+  3.6 Merge Request内容填写规则：
+     第一部分内容为对应issue号及reviewer，单独成行
+           如： #295 @Jianmin
+         如果需要多人同时进行Review，可以@多个reviewer（多人Reivew规则请参考4.7）
+           如：#295 @Jianmin @Wangfeng @xxx @xxxx
+     第二行部分内容为merge request具体描述信息，尽量详细;
+         如：usemodify dao api:improve deleteItem and deleteItems func,extra conditions could be use
+                1.完善DAO中api，不限定删除时条件为URI
+                2.修改前段调用接口，删除时不使用update方法，而进行彻底删除
+                3.修改filehandle中对外提供的接口
+     第三那部分为测试方法说明，以便reviewer进行测试。
+         如：测试方法：
+                 1.打开数据管理器，进入decuments目录，任选一个文件选择右键菜单中删除
+                 2.操作将删除文件和数据库内容，
+                 3.成功后后台打印delete success信息，UI中刷新后文件同时消失
+     第四部分为可选，改动后需说明地方或其他问题等可记录在此。
+         如：问题：
+                1.前端页面不能同时更新
+
+4.使用流程--Review
+  4.1 Reviewer收到通知后可根据邮件中链接或直接登陆GitLab找到相应的PR。
+
+  4.2 通过Files changed标签进行Code Review。
+
+  4.3 在2中标签页面下还可以选择split标签进行diff
+
+  4.4 在有疑问或不合理的line上可以通过把鼠标移至该行并点击'+'方式添加comment
+
+  4.5 无问题后切换回Conversation标签下进行Merge
+
+  4.6 完成后无需再次进入对应issue中添加comment。
+
+  4.7 当一个MR@了多名reviewer时，每个Reviewer对代码review并确认没有问题后，
+        以在该MR下回复的形式说明已通过Reivew，同时需注意之前有几人已回复过，
+        如果是最后回复的Reviewer，需进行Merge操作。
+
+5.关于Issue
+  5.1 对于项目中任何疑问、Bug、可以完善的地方都可以通过issue方式提出，不过提出时请注意检查已有的issue，尽量避免重复。
+
+  5.2 Issue的创建请参考1.2
+
+6.FAQ：
+问：如何在新规则中使用merge request？
+答：当Developer申请一个新MergeRequest（以下简称MR）时，标题和内容都重新进行了定义，具体如下：
+       Merge Request标题命名规则：清晰准确具体表达所提交修改的内容
+       如：单条 数据/文件 删除功能实现
+
+       Merge Request内容填写规则：
+           第一部分内容为对应issue号及reviewer，单独成行
+                 如： #295 @Jianmin
+             如果需要多人同时进行Review，可以@多个reviewer（多人Reivew规则请参考4.7）
+                 如：#295 @Jianmin @Wangfeng @xxx @xxxx
+           第二行部分内容为Merge request具体描述信息，尽量详细;
+             如：usemodify dao api:improve deleteItem and deleteItems func,extra conditions could be use
+                1.完善DAO中api，不限定删除时条件为URI
+                2.修改前段调用接口，删除时不使用update方法，而进行彻底删除
+                3.修改filehandle中对外提供的接口
+           第三那部分为测试方法说明，以便reviewer进行测试。
+             如：测试方法：
+                 1.打开数据管理器，进入decuments目录，任选一个文件选择右键菜单中删除
+                 2.操作将删除文件和数据库内容，
+                 3.成功后后台打印delete success信息，UI中刷新后文件同时消失
+           第四部分为可选，改动后需说明地方或其他问题等可记录在此。
+             如：问题：
+                1.前端页面不能同时更新
+
+问：在内容中使用'#'和'@'有什么用处？
+答：在comment中使用'#'关联某一issue后，会在该issue中自动生成当前事务的链接，并根据当前事务属性自动进行分类。
+        
+        在comment中使用'@'关联某一member后，会在发送群发通知邮件时指定抄送人给该成员。
+
+问：每天都会收到大量的gitLab通知邮件，太烦躁怎么办？
+答：可以在profile中Notifications中设置通知级别。               
+   
+问：每次使用repo sync命令时，是否会对每个repository切换分支？
+答：会的。每次repo sync时，都会将每个repository分支切换为master，所以developer使用时应注意。
+
+问：为什么提交的Merge Request不能自动合并？
+答：因为提交至自己远程源的内容与IbpTeam中的源有冲突。
+        需developer在本地pull origin并解决冲突后重新push yourself
+
+问：origin中新建了一个分支dev，我该如何操作？
+答：首先将origin中dev分支拉到本地
+            git fetch origin
+            git checkout dev
+        然后将dev分支提交到yourself
+            git push yourself dev
+
+问：每次提交MR时，都需要选择一下分支么？
+答：可以在GitLab中对应Repository的settings中，更换默认分支为常用开发分支
+        如：dev
+        当此分支名称与origin分支名称对应时，
+        每次提交MR会自动使用默认分支进行对比。
+        不过仍需大家注意下以免提交错误。
+
+问：本地新建开发分支合并至上游仓库后是否可以删除？
+答：在分支内容已完整的合并到上游后，本地分支可由开发人员自行判断是否需要删除。

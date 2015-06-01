@@ -1,0 +1,70 @@
+#部署GitLab开发环境
+
+1.注册并配置GitLab
+
+  a) 访问124.16.141.145/users/sign_in注册组内GitLab账户
+    （需进行邮箱验证）
+
+  b) 将账户名发至我的邮箱：yuanzhe@iscas.ac.cn
+    （我会将大家添加至IbpTeam中）
+
+  c) 在设置中配置ssh公钥
+
+1.下载相关源码仓库
+
+  a) 创建工程目录
+    mkdir WORKSPACE && cd WORKSPACE
+  
+  b) 下载repo
+    wget http://192.168.162.142/repo
+   （外网下载地址： http://124.16.141.145/ibp/repo/raw/master/repo）
+
+   （由于repo会自动使用公钥验证版本，而之前的repo版本已经下载了原始的公钥
+     但目前我们更新了公钥，所以大家使用新版repo之前，需要将自己用户目录下
+     的.repoconfig目录删除。这样才能正常使用新版repo，否则会报以下错误。
+
+     gpg: Can't check signature: public key not found
+     error: could not verify the tag 'v1.12.20'）
+
+  c) 增加repo可执行权限
+    chmod a+x repo
+
+  d) 初始化repo库
+    ./repo init -u git@124.16.141.145:ibp/manifest.git
+
+  e) 同步各版本库
+    ./repo sync
+
+2.编译部署
+
+  a) 初始化自动编译脚本
+    cd ~/WORKSPACE &&　. set_env (或通过 source build/envsetup.sh初始化)
+
+  b）为各个版本库初始化分支
+    cmaster
+    （命令执行后将在各版本库中创建与远程仓库对应的master分支
+      如需在其他分支下进行编译请手动进入相应仓库通过git checkout命令切换分支）
+
+  *b)demo-rio  demo-webde等主要开发仓库一般都是在dev分支上进行开发
+    cd ~/WORKSPACE/app/demo-rio && git fetch origin && git checkout dev
+    cd ~/WORKSPACE/app/demo-webde && git fetch origin && git checkout dev
+
+  c）通过m、lall、mm等命令进行各个node模块的编译
+    （如在m过程中卡在某模块，可在对应nw项目下使用npm list命令查看依赖库是否编译成功
+      然后对失败的库通过mm命令进行单独编译）
+
+3.注意事项
+
+  a)在GitHub中我们的仓库属于上游源所以在repo设置中源名称为upstream
+
+    目前在GitLab中恢复源名称origin
+
+    如习惯使用upstream源名称可通过如下命令更改：
+   git remote rename 现名称 新名称
+
+  b)GitLab使用规范如同GitHub，需从Ibp Team对应的仓库中fork出自己的远程仓库
+    通过如下命令将远程仓库添加至本地
+    git remote add 本地仓库名 git@124.16.141.145：xxx/xxxx.git
+
+  c)提交时同样提交至自己远程仓库中，通过发起Merge　Request进行合并。
+    具体操作请参考GitHub使用规范。
