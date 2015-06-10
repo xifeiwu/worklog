@@ -1,0 +1,2 @@
+default.xml
+fetch="git://Android.git.linaro.org/"
