@@ -1,2 +1,4 @@
 Linux Kernel Development
 The Missing Manual
+汇编语言 基于linux环境
+Unix/Linux编程实践教程
