@@ -1,0 +1,6 @@
+七月份
+1. nodejs和chromium ndk编译原理分析，交叉编译原理分析。相关文档以及配置测试等
+2. linux平台node-gyp和nw-gyp实现原理分析，产出相关文档或测试代码。
+3. android平台js调用jxcore实现方式调研，主要产出相关文档，以及测试代码。"
+
+
