@@ -1,0 +1,5 @@
+adb forward tcp:4444 localabstract:/adb-hub;
+adb -s ZX1G42BDK6 forward tcp:4444 localabstract:/adb-hub
+adb forward tcp:4444 localabstract:/adb-hub
+adb -s ZX1G42BDK6 connect localhost:4444
+

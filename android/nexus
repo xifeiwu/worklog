@@ -1,4 +1,4 @@
-Nexus安装Android系统
+一、Nexus安装Android系统
 出自：https://developers.google.com/android/nexus，该网页提供了Google的nexus系列手机的驱动和安装包。
 驱动：Nexus Binaries
 安装包：Nexus Factory Images
@@ -36,3 +36,6 @@ Execute:
 fastboot oem lock
 Locking the bootloader does not wipe any data, but when you want to flash it again, you must run fastboot oem unlock again, which will wipe the data.
 
+二、bootloader解锁
+fastboot oem unlock
+fastboot oem lock
