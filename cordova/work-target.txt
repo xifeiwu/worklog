@@ -1,0 +1,4 @@
+1、了解Cordova中Service实现。
+2、整理webde-android项目。
+3、调研插件实现，将service加入AndroidMenifest.xml中。
+4、整理项目结构，使之更清晰。
