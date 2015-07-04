@@ -39,3 +39,18 @@ Locking the bootloader does not wipe any data, but when you want to flash it aga
 二、bootloader解锁
 fastboot oem unlock
 fastboot oem lock
+
+三、漫游问题
+IMSI共有15位，其结构如下：MCC+MNC+MSIN 。 MCC：Mobile Country Code，移动国家码，MCC的资源由国际电联（ITU）统一分配和管理，唯一识别移动用户所属的国家，共3位，中国为460;　　 MNC:Mobile Network Code，移动网络码，共2位。中国移动MNC：00、02、07。
+IMSI存储在SIM卡，只有一个序列，而当前网络的MCC+MNC可能是46000、46002、46007。如果sim卡的MCC+MNC与当前网络MCC+MNC不一样，手机就认为处于漫游状态，所以勾选漫游才能上网。这个问题是高通平台代码的bug。我所在的公司也使用高通平台。我在MSM8610平台的手机上也遇到了这个问题，这个bug还是我改的。nexus不卖往中国大陆，没做这方面的测试。
+
+#安卓5.0和5.1网络信号出现感叹号不消失的解决方法！#
+关闭谷歌验证：
+su
+settings put global captive_portal_detection_enabled 0
+reboot
+不关闭谷歌验证，替换国内服务器，已测试可用！
+su
+settings put global captive_portal_server liukebin.sinaapp.com 
+reboot
+
