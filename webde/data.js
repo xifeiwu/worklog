@@ -19,15 +19,6 @@ define(function() {
       }
     });
   };
-  o.getLocalData = function() {
-    sendrequest("data.getLocalData", Array.prototype.slice.call(arguments));
-  };
-  o.startIMChatServer = function() {
-    sendrequest("data.startIMChatServer", Array.prototype.slice.call(arguments));
-  };
-  o.sendIMMsg = function() {
-    sendrequest("data.sendIMMsg", Array.prototype.slice.call(arguments));
-  };
   o.loadFile = function() {
     sendrequest("data.loadFile", Array.prototype.slice.call(arguments));
   };
@@ -57,9 +48,6 @@ define(function() {
   };
   o.openDataByUri = function() {
     sendrequest("data.openDataByUri", Array.prototype.slice.call(arguments));
-  };
-  o.openDataByPath = function() {
-    sendrequest("data.openDataByPath", Array.prototype.slice.call(arguments));
   };
   o.updateDataValue = function() {
     sendrequest("data.updateDataValue", Array.prototype.slice.call(arguments));
@@ -94,17 +82,14 @@ define(function() {
   o.setTagByUri = function() {
     sendrequest("data.setTagByUri", Array.prototype.slice.call(arguments));
   };
-  o.setTagByUriMulti = function() {
-    sendrequest("data.setTagByUriMulti", Array.prototype.slice.call(arguments));
-  };
   o.getFilesByTags = function() {
     sendrequest("data.getFilesByTags", Array.prototype.slice.call(arguments));
   };
   o.getFilesByTagsInCategory = function() {
     sendrequest("data.getFilesByTagsInCategory", Array.prototype.slice.call(arguments));
   };
-  o.rmTagsAll = function() {
-    sendrequest("data.rmTagsAll", Array.prototype.slice.call(arguments));
+  o.rmTagAll = function() {
+    sendrequest("data.rmTagAll", Array.prototype.slice.call(arguments));
   };
   o.rmTagsByUri = function() {
     sendrequest("data.rmTagsByUri", Array.prototype.slice.call(arguments));
@@ -169,21 +154,6 @@ define(function() {
   o.setRelativeTagByPath = function() {
     sendrequest("data.setRelativeTagByPath", Array.prototype.slice.call(arguments));
   };
-  o.pullFromOtherRepoTest = function() {
-    sendrequest("data.pullFromOtherRepoTest", Array.prototype.slice.call(arguments));
-  };
-  o.getGitLog = function() {
-    sendrequest("data.getGitLog", Array.prototype.slice.call(arguments));
-  };
-  o.repoReset = function() {
-    sendrequest("data.repoReset", Array.prototype.slice.call(arguments));
-  };
-  o.repoResetFile = function() {
-    sendrequest("data.repoResetFile", Array.prototype.slice.call(arguments));
-  };
-  o.renameDataByUri = function() {
-    sendrequest("data.renameDataByUri", Array.prototype.slice.call(arguments));
-  };
   o.deviceInfo = function() {
     sendrequest("data.deviceInfo", Array.prototype.slice.call(arguments));
   };
@@ -193,8 +163,20 @@ define(function() {
   o.getVideoThumbnail = function() {
     sendrequest("data.getVideoThumbnail", Array.prototype.slice.call(arguments));
   };
-  o.repoSearch = function() {
-    sendrequest("data.repoSearch", Array.prototype.slice.call(arguments));
+  o.test_rdfHandle = function() {
+    sendrequest("data.test_rdfHandle", Array.prototype.slice.call(arguments));
+  };
+  o.test_baseinfo = function() {
+    sendrequest("data.test_baseinfo", Array.prototype.slice.call(arguments));
+  };
+  o.renameDataByUri = function() {
+    sendrequest("data.renameDataByUri", Array.prototype.slice.call(arguments));
+  };
+  o.test_typeHandle = function() {
+    sendrequest("data.test_typeHandle", Array.prototype.slice.call(arguments));
+  };
+  o.test_desktop = function() {
+    sendrequest("data.test_desktop", Array.prototype.slice.call(arguments));
   };
   return o;
-}); 
+});
