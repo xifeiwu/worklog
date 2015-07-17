@@ -1,8 +1,9 @@
-adb forward tcp:4444 localabstract:/adb-hub;
-adb -s ZX1G42BDK6 forward tcp:4444 localabstract:/adb-hub
 adb forward tcp:4444 localabstract:/adb-hub
-adb -s ZX1G42BDK6 connect localhost:4444
+adb connect localhost:4444
 
 
+#adb -s ZX1G42BDK6 forward tcp:4444 localabstract:/adb-hub
 am start -n dev.hybridapp/.CordovaApp
 
+adb -s 04d6c1f60591eb93 tcpip 5555
+adb -s 04d6c1f60591eb93 connect 192.168.1.106:5555
