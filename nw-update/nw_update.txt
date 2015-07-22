@@ -1,0 +1,18 @@
+﻿三种更新方式：
+1.进入子模块目录，执行，npm update, nw-gyp rebuild --target=0.12.0
+2.进入node_modules同级目录，执行，rm -rf node_modules/${module_name}; NODE_WEBKIT_VERSION=0.12.0; npm install ${module_name} --build-from-source --runtime=node-webkit --target_arch=ia32 --target=$NODE_WEBKIT_VERSION
+3.从www.npmjs.com中搜索包明，找到github上的软件源，git clone ; npm install; nw-gyp rebuild --target=0.12.0
+三种方式对代码的变动依次增大，如果上一种可行则不尝试下一种。
+
+
+NODE_OUT
+bash $CROOT/build/core/build_single_module.sh
+nw-gyp rebuild --target=0.12.2
+
+
+
+node-pre-gyp install --fallback-to-build
+
+cos@cos-pc ~/Templates/repode2/src/node_modules/levelgraph $ ll ../../../out/node4nw/lib/node_modules/levelgraph/node_modules/
+async/              leveldown/          levelup/            readable-stream/    
+callback-stream/    level-js/           level-write-stream/ xtend/    
