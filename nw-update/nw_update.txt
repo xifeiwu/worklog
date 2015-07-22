@@ -18,6 +18,8 @@ $ node-pre-gyp build --runtime=node-webkit --target=0.3.3
 node-pre-gyp install --fallback-to-build
 
 
-cos@cos-pc ~/Templates/repode2/src/node_modules/levelgraph $ ll ../../../out/node4nw/lib/node_modules/levelgraph/node_modules/
-async/              leveldown/          levelup/            readable-stream/    
-callback-stream/    level-js/           level-write-stream/ xtend/    
+#for node_modules nodegit
+find . -name libssh2_config.h
+
+#for node_modules sqlite3
+npm install --build-from-source --runtime=node-webkit --target_arch=ia32 --target=0.12.2
