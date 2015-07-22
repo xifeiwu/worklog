@@ -10,8 +10,13 @@ bash $CROOT/build/core/build_single_module.sh
 nw-gyp rebuild --target=0.12.2
 
 
+#node-pre-gyp
+supports building for both node.js and node-webkit by using either node-gyp or nw-gyp.
+$ npm install node-pre-gyp
+$ node-pre-gyp build --runtime=node-webkit --target=0.3.3
 
 node-pre-gyp install --fallback-to-build
+
 
 cos@cos-pc ~/Templates/repode2/src/node_modules/levelgraph $ ll ../../../out/node4nw/lib/node_modules/levelgraph/node_modules/
 async/              leveldown/          levelup/            readable-stream/    

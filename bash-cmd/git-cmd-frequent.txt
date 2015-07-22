@@ -18,3 +18,12 @@ git log -p <filename>
 
 查看某人的所有提交
 git log --author=<author>
+
+查看详细信息
+sepatator="*******************************************************************************************"
+date="提交时间"
+description="提交描述"
+change="提交变更"
+git log --branches -p --stat --no-merges --author=xifei --pretty=format:"$sepatator%n$date：%cd%n$description：%s%n$change：%n"
+
+--after --before
