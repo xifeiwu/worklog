@@ -1,0 +1,1 @@
+android-sdk-linux/build-tools/23.0.0_rc2/aapt dump badging 
