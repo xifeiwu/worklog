@@ -1,0 +1,5 @@
+tar -zcvf android_project.tar.gz --exclude=*/.git/* --exclude=*/.repo/* android_project/
+
+#in file /etc/rc.local add before exit 0.
+mount /dev/sda8 /home/cos/External
+chown cos.cos /home/cos/External
