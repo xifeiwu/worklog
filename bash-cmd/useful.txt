@@ -6,3 +6,6 @@ chown cos.cos /home/cos/External
 
 mkfs -t ext4 /dev/sda6
 
+tar -zcvf git.tar.gz . --exclude git.tar.gz
+tar -zcvf ../fedora14.tar.gz .
+tar -zxvf git.tar.gz -C here/
