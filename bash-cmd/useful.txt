@@ -38,3 +38,31 @@ koji-utils-1.8.0-1.fc14.noarch
 koji-builder-1.8.0-1.fc14.noarch
 koji-vm-1.8.0-1.fc14.noarch
 koji-1.8.0-1.fc14.noarch
+
+fedora14系统tar备份总结
+1，进入另一个系统，将需要备份的分区mount到/mnt下
+mount /dev/sda1 /mnt
+cd /mnt
+tar -zcvf ../fedora14.tar.gz .
+2，选择需要复原的分区
+新建分区
+fdisk /dev/sda 
+（使用p n等指令，需要重启系统分区才能生效）
+各式化分区
+mkfs.ext4 /dev/sda2
+挂载分区
+mount /dev/sda2 /mnt
+将tar包解压到制定分区
+tar -zxvf /fedora14.tar.gz -C /mnt
+3，更新grub
+使用某个系统的grub
+update-grub
+grub-install /dev/sda
+或制定其它系统的grub
+grub-install --root-directory=/mnt /dev/sda
+4，修改uuid
+查看各个分区的uuid
+blkid 
+修改主grub和更新系统的/etc/fstab的uuid
+5，其它
+
