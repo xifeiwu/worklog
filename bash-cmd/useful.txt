@@ -5,8 +5,6 @@ tar -zcvf android_project.tar.gz --exclude=*/.git/* --exclude=*/.repo/* android_
 mount /dev/sda8 /home/cos/External
 chown cos.cos /home/cos/External
 
-#格式化分区
-mkfs -t ext4 /dev/sda6
 
 #使用tar包备份系统
 tar -zcvf git.tar.gz . --exclude git.tar.gz
@@ -17,4 +15,17 @@ tar -zxvf git.tar.gz -C here/
 sudo apt-get install exfat-fuse exfat-utils
 
 #grub相关
+update-grub
+grub-install /dev/sda
+mount /dev/sda11 /mnt
+mount /dev/sda10 /mnt/boot
+mount /dev/sda12 /mnt/home
+grub-install --root-directory=/mnt /dev/sda
 
+#格式化分区
+mkfs -t ext4 /dev/sda6
+mkfs.ext4 /dev/sda6
+
+#看分区uuid的方法
+blkid 
+ls -l /dev/disk/by-uuid
