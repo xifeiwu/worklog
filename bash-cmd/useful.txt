@@ -29,3 +29,12 @@ mkfs.ext4 /dev/sda6
 #看分区uuid的方法
 blkid 
 ls -l /dev/disk/by-uuid
+/etc/fstab
+
+rpm -e koji-web-1.8.0-1.fc14.noarc
+koji-hub-plugins-1.8.0-1.fc14.noarch
+koji-hub-1.8.0-1.fc14.noarch
+koji-utils-1.8.0-1.fc14.noarch
+koji-builder-1.8.0-1.fc14.noarch
+koji-vm-1.8.0-1.fc14.noarch
+koji-1.8.0-1.fc14.noarch
