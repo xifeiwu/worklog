@@ -31,13 +31,13 @@ blkid
 ls -l /dev/disk/by-uuid
 /etc/fstab
 
-rpm -e koji-web-1.8.0-1.fc14.noarc
-koji-hub-plugins-1.8.0-1.fc14.noarch
-koji-hub-1.8.0-1.fc14.noarch
-koji-utils-1.8.0-1.fc14.noarch
-koji-builder-1.8.0-1.fc14.noarch
-koji-vm-1.8.0-1.fc14.noarch
-koji-1.8.0-1.fc14.noarch
+rpm -e koji-web-1.8.0-1.fc14.noarch
+rpm -e koji-hub-plugins-1.8.0-1.fc14.noarch
+rpm -e koji-hub-1.8.0-1.fc14.noarch
+rpm -e koji-utils-1.8.0-1.fc14.noarch
+rpm -e koji-builder-1.8.0-1.fc14.noarch
+rpm -e koji-vm-1.8.0-1.fc14.noarch
+rpm -e koji-1.8.0-1.fc14.noarch
 
 fedora14系统tar备份总结
 1，进入另一个系统，将需要备份的分区mount到/mnt下
