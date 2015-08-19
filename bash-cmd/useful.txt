@@ -1,11 +1,20 @@
 tar -zcvf android_project.tar.gz --exclude=*/.git/* --exclude=*/.repo/* android_project/
 
+#开机挂载分区
 #in file /etc/rc.local add before exit 0.
 mount /dev/sda8 /home/cos/External
 chown cos.cos /home/cos/External
 
+#格式化分区
 mkfs -t ext4 /dev/sda6
 
+#使用tar包备份系统
 tar -zcvf git.tar.gz . --exclude git.tar.gz
 tar -zcvf ../fedora14.tar.gz .
 tar -zxvf git.tar.gz -C here/
+
+#不能mount exfat格式分区
+sudo apt-get install exfat-fuse exfat-utils
+
+#grub相关
+
