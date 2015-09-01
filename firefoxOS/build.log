@@ -1,0 +1,9 @@
+cd $WORKSPACE
+echo "VRIANT=userdebug" > .userconfig
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib gcc-4.7 g++-4.7 g++-4.7-multilib git lib32ncurses5-dev lib32z1-dev libgconf2-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip libxml2-utils  lzop build-essential
+将backup-flame下载并解压。
+./config.sh flame
+./build.sh -j 8
+./flash.sh
