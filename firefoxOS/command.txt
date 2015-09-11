@@ -1,0 +1,9 @@
+run_adb wait-for-device
+if run_adb shell 'cat /data/local/webapps/webapps.json || echo \"basePath\": \"/system\"' | grep -qs '"basePath": "/system' ; then
+    echo "Push to /system/b2g ..."
+    GAIA_MAKE_FLAGS+=" GAIA_INSTALL_PARENT=/system/b2g"
+else
+    echo "Push to /data/local ..."
+    GAIA_MAKE_FLAGS+=" GAIA_INSTALL_PARENT=/data/local"
+fi
+make -C gaia push $GAIA_MAKE_FLAGS
