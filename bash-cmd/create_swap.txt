@@ -1,0 +1,48 @@
+一、使用fdisk 在设备上创建swap分区。
+1.创建分区
+Command (m for help): n
+Command action
+   l   logical (5 or over)
+   p   primary partition (1-4)
+l
+First cylinder (641-1566, default 641):
+Using default value 641
+Last cylinder or +size or +sizeM or +sizeK (641-890, default 890):
+Using default value 890
+Command (m for help): p
+Disk /dev/sda: 12.8 GB, 12884901888 bytes
+255 heads, 63 sectors/track, 1566 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1           6       48163+  83  Linux
+/dev/sda2               7         515     4088542+  83  Linux
+/dev/sda3             516        1566     8442157+   5  Extended
+/dev/sda5             891        1015     1004031   83  Linux
+/dev/sda6            1016        1566     4425876   83  Linux
+/dev/sda7             516         640     1004031   83  Linux
+/dev/sda8             641         890     2008093+  83  Linux
+ 
+2.指定分区类型为linux swap。这里的/dev/sda5就是我们要做swap的分区。
+Command (m for help): t
+Partition number (1-8): 5
+Hex code (type L to list codes): 82
+Command (m for help): p
+Disk /dev/sda: 12.8 GB, 12884901888 bytes
+255 heads, 63 sectors/track, 1566 cylinders
+Units = cylinders of 16065 * 512 = 8225280 bytes
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           1           6       48163+  83  Linux
+/dev/sda2               7         515     4088542+  83  Linux
+/dev/sda3             516        1566     8442157+   5  Extended
+/dev/sda5             516         640     1004031   82  Linux swap
+/dev/sda6             641         890     2008093+  83  Linux
+/dev/sda7             891        1015     1004031   83  Linux
+/dev/sda8            1016        1566     4425876   83  Linux
+3.使用mkswap命令设置交换分区
+[root@libydwei /]# mkswap /dev/sda5
+Setting up swapspace version 1, size = 1028120 kB
+4.swapon 激活swap分区
+[root@libydwei /]# swapon /dev/sda5
+5.为了能够在系统启动是自动挂载。我们可以编辑/etc/fstab配置文件。
+在文件末尾增加：
+/dev/sda5               swap                    swap    defaults        0 0
