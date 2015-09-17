@@ -46,3 +46,12 @@ Setting up swapspace version 1, size = 1028120 kB
 5.为了能够在系统启动是自动挂载。我们可以编辑/etc/fstab配置文件。
 在文件末尾增加：
 /dev/sda5               swap                    swap    defaults        0 0
+
+二、使用文件创建swap分区
+bs  blocksize ，每个块大小为1k.count=2048000。则总大小为2G的文件。
+1. dd if=/dev/zero of=/swapfile bs=1k count=2048000
+2. mkswap /swapfile
+3. swapon /swapfile
+4. 修改/etc/fstab使其启动时自动mount：
+在/etc/fstab中增加如下语句：
+/swapfile  swap  swap    defaults 0 0
