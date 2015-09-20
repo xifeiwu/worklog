@@ -1,0 +1,38 @@
+cos@cos-pc ~/External/h5os $ find . -name mozbuild
+./gecko/python/mozbuild
+./gecko/python/mozbuild/mozbuild
+./gecko/build/docs/mozbuild
+
+
+./mach build-backend
+
+cos@cos-pc ~/External/h5os/gecko $ ./mach build-backend
+ 0:00.15 /home/cos/External/h5os/gecko/obj-x86_64-unknown-linux-gnu/_virtualenv/bin/python /home/cos/External/h5os/gecko/obj-x86_64-unknown-linux-gnu/config.status --backend=RecursiveMake
+Traceback (most recent call last):
+  File "/home/cos/External/h5os/gecko/obj-x86_64-unknown-linux-gnu/config.status", line 1004, in <module>
+    from mozbuild.config_status import config_status
+ImportError: No module named mozbuild.config_status
+
+
+
+
+mozwebidlcodegen
+
+
+
+from mozbuild.config_status import config_status
+
+sys.path.append('/home/cos/External/h5os/gecko/python')
+sys.path.append('/home/cos/External/h5os/gecko/python/mozbuild')
+sys.path.append('/home/cos/External/h5os/gecko/python/mach')
+sys.path.append('/home/cos/External/h5os/gecko/dom/bindings')
+sys.path.append('/home/cos/External/h5os/gecko/python/which')
+sys.path.append('/home/cos/External/h5os/objdir-gecko/_tests/mozbase/mozprocess')
+sys.path.append('/home/cos/External/h5os/gecko/testing/mozbase/mozfile')
+sys.path.append('/home/cos/External/h5os/gecko/layout/tools/reftest')
+sys.path.append('/home/cos/External/h5os/gecko/python/jsmin')
+sys.path.append('/home/cos/External/h5os/gecko/testing/mozbase/manifestparser')
+sys.path.append('/home/cos/External/h5os/gecko/testing/mozbase/mozinfo')
+
+
+sys.path.append('/home/cos/External/h5os/gecko/testing/mozbase/mozlog')
