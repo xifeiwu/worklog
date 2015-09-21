@@ -1,2 +1,8 @@
 g++ -o hello hello.cpp
 gcc -o hello hello.cpp -lstdc++
+
+
+
+g++ -std=c++0x -I..  -c item_io.cc -o item_io.o
+g++ -std=c++0x -I..  item_io.o -o item_io.exe
+rm item_io.o
