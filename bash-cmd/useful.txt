@@ -9,11 +9,18 @@ rsync -av --progress --delete xifei@${SERVERADDRESS}:~/ftp-15/tools/cworkenv/${P
 mount /dev/sda8 /home/xifei/External
 chown xifei.xifei /home/xifei/External
 
+#特定用户环境的开机初始化脚本
+在用户主目录下的.bash_profile中。
+如果没有，就创建一个
 
 #使用tar包备份系统
 tar -zcvf git.tar.gz . --exclude git.tar.gz
 tar -zcvf ../fedora14.tar.gz .
 tar -zxvf git.tar.gz -C here/
+或进入打包目录，将tarball放入上一层目录：
+cd /mnt
+tar -zcvf ../fedora14.tar.gz .
+
 
 #不能mount exfat格式分区
 sudo apt-get install exfat-fuse exfat-utils
@@ -40,19 +47,7 @@ ls -l /dev/disk/by-uuid
 127.0.0.1	${HOSTNAME} localhost
 192.168.160.15  sil-15
 124.16.141.165  ip-165
-192.168.160.16  sil-16
-124.16.141.172  ip-172
-192.168.160.58  sil-58
-192.168.160.176 sil-176
-192.168.161.243 sil-243
-# The following lines are desirable for IPv6 capable hosts
-::1     ip6-localhost ip6-loopback
-fe00::0 ip6-localnet
-ff00::0 ip6-mcastprefix
-ff02::1 ip6-allnodes
-ff02::2 ip6-allrouters
 EOF'
-
 
 
 #fedora14系统tar备份总结
