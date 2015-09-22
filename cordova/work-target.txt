@@ -1,4 +1,0 @@
-1、了解Cordova中Service实现，及Cordova项目。
-3、调研插件实现，将service加入AndroidMenifest.xml中。
-4、将项目改为Android Studio实现，整理项目结构，使之更清晰，使用新的git库。
-5、调研开源web ui。
