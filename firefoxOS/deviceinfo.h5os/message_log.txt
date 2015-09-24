@@ -1,0 +1,7 @@
+cos@cos-pc ~/Documents/Gaia/gaia_mobile/settings.gaiamobile.org $ grep -ri "panels/about/panel"
+js/panels/about/panel.js:define('panels/about/panel',['require','modules/settings_panel','panels/about/hardware_info','panels/about/update_check','panels/about/factory_reset'],function(require) {
+js/main.js:      name: 'panels/about/panel',
+elements/about.html:    <panel data-path="panels/about/panel"></panel>
+index.html:    <panel data-path="panels/about/panel"></panel>
+Binary file .git/index matches
+

@@ -1,0 +1,5 @@
+var SettingsService = require('modules/settings_service');
+SettingsService.navigate("about");
+root
+
+document.querySelector("section.current");
