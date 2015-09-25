@@ -9,4 +9,4 @@ deviceinfo.platform_build_id
 
 每个月发一次
 
-建一个story，注意Epic和Assignee
+建一个task，注意Epic和Assignee
