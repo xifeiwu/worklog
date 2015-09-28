@@ -1,0 +1,2 @@
+https://fxos.telemetry.mozilla.org/submit/telemetry
+FTU_PING_URL?=https://fxos.telemetry.mozilla.org/submit/telemetry
