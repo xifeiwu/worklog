@@ -1,0 +1,163 @@
+adb shell stop b2g
+adb shell rm -r /cache/*
+adb shell rm -r /data/b2g/*
+adb shell rm -r /data/local/webapps
+rm: /data/local/webapps: No such file or directory
+adb remount
+remount succeeded
+adb shell rm -r /system/b2g/webapps
+adb shell 'if test -d /persist/svoperapps; then rm -r /persist/svoperapps; fi'
+Updating 7db5bda..af0e9b7
+Fast-forward
+ default.xml | 1 +
+ 1 file changed, 1 insertion(+)
+Fetching project ringtones
+Fetching project test-agent
+Fetching project bookmark
+Fetching project collection
+Fetching project system
+Fetching project uitest
+Fetching project calendar
+Fetching project clock
+Fetching project emergency-call
+Fetching project wappush
+Fetching project sms
+Fetching project network-alerts
+Fetching project keyboard
+Fetching project gallery
+Fetching project ftu
+Fetching project operatorvariant
+Fetching project callscreen
+Fetching project fm
+Fetching project settings
+Fetching project findmydevice
+Fetching project camera
+Fetching project video
+Fetching project email
+Fetching project communications
+Fetching project bluetooth
+Fetching project download
+Fetching project repo
+Fetching project wallpaper
+Fetching project continent
+Fetching project navigatortest
+Fetching project music
+Fetching project default_theme
+Fetching project costcontrol
+Fetching project search
+Fetching project verticalhome
+Updating 641786c..0fff491
+Fast-forward
+ bower.json                      |  3 +-
+ index.html                      |  5 +++
+ js/app_core.js                  |  3 +-
+ js/browser_key_event_manager.js |  4 ++
+ js/ftu_ping.js                  | 20 ++++++----
+ js/system_soft_keys.js          | 81 +++++++++++++++++++++++++++++++++++++++++
+ js/task_manager.js              | 39 ++++++++++++++++++++
+ style/soft_keys/soft_keys.css   | 26 +++++++++++--
+ style/zindex.css                |  4 ++
+ 9 files changed, 172 insertions(+), 13 deletions(-)
+ create mode 100644 js/system_soft_keys.js
+Test SDK directory: /home/cos/External/gaia/b2g_sdk/39.0a1-2015-03-05-16-02-02
+test -f /home/cos/External/gaia/b2g_sdk/39.0a1-2015-03-05-16-02-02/b2g/xpcshell
+[rebuild] build config has been changed: GAIA_APPDIRS, GAIA_ALLAPPDIRS
+[rebuild] rebuildAppDirs: ["/home/cos/External/gaia/apps/fm","/home/cos/External/gaia/apps/collection","/home/cos/External/gaia/apps/wallpaper","/home/cos/External/gaia/apps/sms","/home/cos/External/gaia/apps/continent","/home/cos/External/gaia/apps/bluetooth","/home/cos/External/gaia/apps/network-alerts","/home/cos/External/gaia/apps/download","/home/cos/External/gaia/apps/callscreen","/home/cos/External/gaia/apps/settings","/home/cos/External/gaia/apps/ftu","/home/cos/External/gaia/apps/search","/home/cos/External/gaia/apps/costcontrol","/home/cos/External/gaia/apps/keyboard","/home/cos/External/gaia/apps/uitest","/home/cos/External/gaia/apps/camera","/home/cos/External/gaia/apps/verticalhome","/home/cos/External/gaia/apps/calendar","/home/cos/External/gaia/apps/email","/home/cos/External/gaia/apps/operatorvariant","/home/cos/External/gaia/apps/emergency-call","/home/cos/External/gaia/apps/findmydevice","/home/cos/External/gaia/apps/wappush","/home/cos/External/gaia/apps/music","/home/cos/External/gaia/apps/default_theme","/home/cos/External/gaia/apps/gallery","/home/cos/External/gaia/apps/video","/home/cos/External/gaia/apps/system","/home/cos/External/gaia/apps/test-agent","/home/cos/External/gaia/apps/communications","/home/cos/External/gaia/apps/ringtones","/home/cos/External/gaia/apps/bookmark","/home/cos/External/gaia/apps/navigatortest","/home/cos/External/gaia/apps/clock","/home/cos/External/gaia/dev_apps/mochitest","/home/cos/External/gaia/dev_apps/template","/home/cos/External/gaia/apps/settings/test/fixtures/addon1","/home/cos/External/gaia/apps/settings/test/fixtures/addon2","/home/cos/External/gaia/shared"]
+[svoperapps.js] PROFILE_DIR, GAIA_DISTRIBUTION_DIR, VARIANT_PATH are all required
+[app] bower installed on gaia app
+[settings.js] Writing settings file: /home/cos/External/gaia/profile/settings.json
+[settings.js] Writing settings file: /home/cos/External/gaia/profile/defaults/settings.json
+[app] bower installed on fm app
+[app] bower installed on collection app
+[app] building collection app...
+[app] bower installed on wallpaper app
+[app] building wallpaper app...
+[app] bower installed on sms app
+[app] building sms app...
+[app] bower installed on bluetooth app
+[app] building bluetooth app...
+require.js optimize ok
+[app] bower installed on network-alerts app
+[app] bower installed on download app
+[app] bower installed on settings app
+[app] building settings app...
+[cmd] /usr/bin/git --git-dir=/home/cos/External/gaia/.git log -1 --format=%H%n%ct HEAD
+[settings-app-build] Writing git commit information to: /home/cos/External/gaia/apps/settings/build_stage/settings/resources/gaia_commit.txt
+[app] bower installed on ftu app
+[app] building ftu app...
+[/build_stage/ftu/index.html: L10n Deprecation Warning: using innerHTML in translations is unsafe and will not be supported in future versions of l10n.js. See https://bugzil.la/1027117
+]
+r.js optimize ok
+[app] bower installed on search app
+[app] building search app...
+[app] bower installed on costcontrol app
+[app] building costcontrol app...
+[app] bower installed on keyboard app
+[app] building keyboard app...
+[keyboard-load-layouts] The enabled layouts are set to: en, pt-BR, es, de, fr, fr-CA, pl, ko, zh-Hans-Pinyin, en-Dvorak
+[keyboard-load-layouts] The downloadable layouts are set to: ru, hu, he, vi-Telex, fr, bs, my, sq, th, ig, ca, en-Colemak, ga, da, ro, bg-BDS, bg-Pho-Ban, fr-CA, sk, ta, en-Africa, lv, ar, de, wo, fr-CH, af, bn-Avro, eu, fr-Dvorak-bepo, ff, es-Americas, bn-Probhat, hr, pt-PT, sv, gd, fy, lt, sr-Latn, cy, en-Dvorak, gl, en-Neo, en-GB, tr-F, en, mk, bg-Pho-Trad, hi, sr-Cyrl, tr-Q, cs, pt-BR, pl, nl, el, dz-BT, es, eo, vi-Qwerty, gv, ko, uk, vi-Typewriter, nb, it, te, cs-qwerty
+[app] bower installed on uitest app
+[app] bower installed on camera app
+[app] building camera app...
+[app] bower installed on verticalhome app
+[app] building verticalhome app...
+Warning: Can not find application marketplace.firefox.com at apps
+[app] bower installed on calendar app
+[app] building calendar app...
+require.js optimize ok
+Will run rjs optimizer...
+[app] bower installed on email app
+[app] building email app...
+[app] bower installed on operatorvariant app
+[app] building operatorvariant app...
+[app] bower installed on emergency-call app
+[OK] rjs optimize
+[app] bower installed on findmydevice app
+[app] building findmydevice app...
+[operatorvariant] /home/cos/External/gaia/distribution/variant.json not found. Single variant resources will not be added.
+
+[app] bower installed on wappush app
+[app] building wappush app...
+[app] bower installed on music app
+[app] building music app...
+[app] bower installed on default_theme app
+[app] bower installed on gallery app
+[app] building gallery app...
+[app] bower installed on video app
+[app] bower installed on system app
+[app] building system app...
+[app] bower installed on communications app
+[app] building communications app...
+[app] bower installed on ringtones app
+[app] bower installed on bookmark app
+[app] bower installed on navigatortest app
+[app] bower installed on clock app
+[app] building clock app...
+require.js optimize ok
+[app] bower installed on callscreen app
+Finished: test ui config file: ./apps/test-agent/config.json
+Finished: Generating extensions
+Profile Ready: please run [b2g|firefox] -profile /home/cos/External/gaia/profile
+[push] Waiting for device ...
+rm: //cache/*: No such file or directory
+[push] GAIA_INSTALL_PARENT unset; probing previous installation location...
+Invalid JSON file : /tmp/pushGaiatbzv8i6l/webapps.json
+Content of JSON file:
+/system/bin/sh: cat: /data/local/webapps/webapps.json: No such file or directory
+
+[push] Install webapp(s) to /system/b2g...
+remount succeeded
+rm: //system/b2g/webapps: No such file or directory
+rm: //data/local/user.js: No such file or directory
+[push] Restarting B2G...
+[svoperapps.js] PROFILE_DIR, GAIA_DISTRIBUTION_DIR, VARIANT_PATH are all required
+[app] bower installed on gaia app
+[settings.js] Writing settings file: /home/cos/External/gaia/profile/settings.json
+[settings.js] Writing settings file: /home/cos/External/gaia/profile/defaults/settings.json
+adb shell stop b2g
+adb remount
+remount succeeded
+adb push profile/settings.json /system/b2g/defaults/settings.json
+adb shell rm /system/b2g/defaults/contacts.json
+rm: /system/b2g/defaults/contacts.json: No such file or directory
+adb shell start b2g
