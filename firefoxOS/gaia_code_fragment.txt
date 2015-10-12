@@ -1,0 +1,35 @@
+var manifestLocation = "http://127.0.0.1/manifest.webapp"; // your domain here
+//var manifestLocation = "http://static.gamehitzone.com/traffic/manifest.webapp";
+var installRequest = navigator.mozApps.install(manifestLocation);
+
+installRequest.onsuccess = function(data) {
+    // App installed successfully!
+};
+
+installRequest.onerror = function(err) {
+    // App couldn't be installed!
+    console.log("Install error!");
+    console.log(err);
+};
+
+var pick = new MozActivity({
+   name: "pick",
+   data: {
+       type: ["image/png", "image/jpg", "image/jpeg"]
+    }
+});
+
+pick.onsuccess = function () { 
+    // Create image and set the returned blob as the src
+    var img = document.createElement("img");
+    img.src = window.URL.createObjectURL(this.result.blob);
+ 
+    // Present that image in your app
+    var imagePresenter = document.querySelector("#image-presenter");
+    imagePresenter.appendChild(img);
+};
+ 
+pick.onerror = function () { 
+    // If an error occurred or the user canceled the activity
+    alert("Can't view the image!");
+};
