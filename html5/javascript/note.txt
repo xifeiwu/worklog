@@ -5,4 +5,54 @@
   <li>Item 3</li>
 </ul>
 
+<div></div>
+<div>
+</div>
+
 2. function declaration and function expression.
+ Immediately-Invoked Function Expression
+http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+
+3.
+operator of ``: the content between ` is is not need to escape.
+  var test_dom = document.createElement("div");
+  test_dom.id = "closure";
+  test_dom.innerHTML =
+  `
+  <ul id="myList">
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+    <li><a>Item 3</a></li>
+  </ul>
+  `;
+  document.body.appendChild(test_dom);
+
+4.
+use of => (arrow function)
+
+5.
+use of requirejs
+
+6.
+Use of ShadowDom
+Reference: https://developer.mozilla.org/en-US/docs/Web/Web_Components/Shadow_DOM
+Example:
+<html>
+  <head></head>
+  <body>
+    <p id="hostElement"></p>
+    <script>
+      // Create shadow DOM
+      var shadow = document.querySelector('#hostElement').createShadowRoot();
+      // Add some text to shadow DOM
+      shadow.innerHTML = '<p>Here is some new text</p>';
+      // Add some CSS to make the text red
+      shadow.innerHTML += '<style>p { color: red };</style>';
+    </script>
+  </body
+</html>
+
+7.
+Firefox OS Building Blocks
+https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks
+https://github.com/gaia-components
