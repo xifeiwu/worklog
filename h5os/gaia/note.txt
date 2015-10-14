@@ -56,3 +56,8 @@ Example:
 Firefox OS Building Blocks
 https://developer.mozilla.org/en-US/Apps/Design/Firefox_OS_building_blocks
 https://github.com/gaia-components
+
+8.
+gaia component study
+https://wiki.mozilla.org/Gaia/Shared/Components
+http://moduscreate.com/web-components-introduction/
