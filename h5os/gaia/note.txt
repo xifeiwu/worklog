@@ -1,20 +1,29 @@
 1.the number of childNodes
+//seven child nodes for ul
 <ul id="myList">
   <li>Item 1</li>
   <li>Item 2</li>
   <li>Item 3</li>
 </ul>
 
+//no child node for div
 <div></div>
+//one child node for div
 <div>
 </div>
 
-2. function declaration and function expression.
- Immediately-Invoked Function Expression
+2. function declaration and function expression, 
+and the relation between them and Immediately-Invoked Function Expression
+form of IIFE
+(function(exports){
+	}
+})(window);
+Full Explanation
 http://benalman.com/news/2010/11/immediately-invoked-function-expression/
 
 3.
 operator of ``: the content between ` is is not need to escape.
+//Example
   var test_dom = document.createElement("div");
   test_dom.id = "closure";
   test_dom.innerHTML =
@@ -29,9 +38,11 @@ operator of ``: the content between ` is is not need to escape.
 
 4.
 use of => (arrow function)
+http://es6.ruanyifeng.com/#docs/function
 
 5.
 use of requirejs
+http://requirejs.cn/
 
 6.
 Use of ShadowDom
@@ -61,3 +72,24 @@ https://github.com/gaia-components
 gaia component study
 https://wiki.mozilla.org/Gaia/Shared/Components
 http://moduscreate.com/web-components-introduction/
+
+9.
+Create Sub class of HTMLElement.
+var XFoo = document.registerElement('x-foo', {
+  prototype: Object.create(HTMLElement.prototype)
+});
+
+Three ways of creating HTML Element.
+
+使用HTML标签
+<x-foo></x-foo>
+
+在 JS 中创建 DOM：
+var xFoo = document.createElement('x-foo');
+xFoo.addEventListener('click', function(e) {
+  alert('Thanks!');
+});
+
+使用 new 操作符：
+var xFoo = new XFoo();
+document.body.appendChild(xFoo);
