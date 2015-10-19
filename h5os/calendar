@@ -1,0 +1,3 @@
+app [calendar]  "Will initialize calendar app" bundle.js:3305:4
+db [calendar]  "Will load b2g-calendar db." bundle.js:3305:4
+"L10nError: "firstDayOfTheWeek" not found in en-US in app://calendar.gaiamobile.org/index.html" l10n.js:2489:8

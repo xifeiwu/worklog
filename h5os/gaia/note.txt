@@ -72,6 +72,7 @@ https://github.com/gaia-components
 gaia component study
 https://wiki.mozilla.org/Gaia/Shared/Components
 http://moduscreate.com/web-components-introduction/
+http://www.html5rocks.com/zh/tutorials/webcomponents/customelements/
 
 9.
 Create Sub class of HTMLElement.
@@ -93,3 +94,5 @@ xFoo.addEventListener('click', function(e) {
 使用 new 操作符：
 var xFoo = new XFoo();
 document.body.appendChild(xFoo);
+
+10.
