@@ -20,6 +20,40 @@ form of IIFE
 })(window);
 Full Explanation
 http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+http://dmitrysoshnikov.com/ecmascript/chapter-5-functions/#question-about-surrounding-parentheses
+Abstraction:
+aving all this, how should we tell the parser that what we really want it to call a function immediately after its creation? The answer is obvious. It’s should be a function expression, and not a function declaration.
+The logical question now is why do we need this type of functions at all? The answer is obvious —  to use them in expressions and “not pollute” the variables object. 
+DEMO1:
+(function foo(x) {
+  alert(x);
+})(1)
+vs.
+function foo(x) {
+  alert(x);
+}(1)
+
+DEMO2:
+foo(); 
+function foo() {
+  alert('foo');
+}
+vs.
+foo();
+foo = function() {
+  alert('foo');
+}
+
+DEMO3:
+var foo = {};
+(function initialize() {
+  var x = 10;
+  foo.bar = function () {
+    alert(x);
+  };
+})();
+foo.bar(); // 10;
+alert(x); // "x" is not defined
 
 3.
 operator of ``: the content between ` is is not need to escape.
