@@ -129,4 +129,13 @@ xFoo.addEventListener('click', function(e) {
 var xFoo = new XFoo();
 document.body.appendChild(xFoo);
 
-10.
+10.类继承与原型继承
+类属性方法、静态属性方法。
+
+11.bind, apply, call
+
+12.正则表达式
+
+13.AMD与COMMOJS
+
+14.DOM
