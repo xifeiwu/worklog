@@ -137,5 +137,9 @@ document.body.appendChild(xFoo);
 12.正则表达式
 
 13.AMD与COMMOJS
+alameda.js
 
 14.DOM
+
+15.gaia's requirejs
+dynamic load of js and css.
