@@ -31,3 +31,7 @@ change="提交变更"
 git log --branches -p --stat --no-merges --author=xifei --pretty=format:"$sepatator%n$date：%cd%n$description：%s%n$change：%n"
 
 --after --before
+
+//used for reference
+git log --date-order --author="$(git config --get user.name)" --pretty=tformat: --numstat --since ==2015-09.20 --until=2015-10-19  | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
+
