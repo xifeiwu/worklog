@@ -35,3 +35,29 @@ git log --branches -p --stat --no-merges --author=xifei --pretty=format:"$sepata
 //used for reference
 git log --date-order --author="$(git config --get user.name)" --pretty=tformat: --numstat --since ==2015-09.20 --until=2015-10-19  | gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }' -
 
+
+his recipe works even if there are multiple commits between A and B, and B and C.
+# Go back to the last commit that we want
+# to form the initial commit (detach HEAD)
+git checkout <sha1_for_B>
+# reset the branch pointer to the initial commit,
+# but leaving the index and working tree intact.
+git reset --soft <sha1_for_A>
+# amend the initial tree using the tree from 'B'
+git commit --amend
+# temporarily tag this new initial commit
+# (or you could remember the new commit sha1 manually)
+git tag tmp
+# go back to the original branch (assume master for this example)
+git checkout master
+# Replay all the commits after B onto the new initial commit
+git rebase --onto tmp <sha1_for_B>
+# remove the temporary tag
+git tag -d tmp
+
+
+fix an history commit message, such as commit A.A represents an commit sha.
+git checkout -b fix A
+git commit --amend
+git rebase -i --onto fix fix dev
+# Then the current branch is dev
