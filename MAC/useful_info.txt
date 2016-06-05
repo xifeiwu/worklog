@@ -1,0 +1,28 @@
+xifeiwudeMacBook-Pro:~ xifeiwu$ brew install bash-completion
+==> Downloading https://homebrew.bintray.com/bottles/bash-completion-1.3_1.el_capitan.bottle.tar.gz
+############                                                              17.1%
+curl: (56) SSLRead() return error -9806
+Error: Failed to download resource "bash-completion"
+Download failed: https://homebrew.bintray.com/bottles/bash-completion-1.3_1.el_capitan.bottle.tar.gz
+Warning: Bottle installation failed: building from source.
+==> Downloading https://bash-completion.alioth.debian.org/files/bash-completion-1.3.tar.bz2
+######################################################################## 100.0%
+==> Patching
+patching file bash_completion
+==> ./configure --prefix=/usr/local/Cellar/bash-completion/1.3_1
+==> make install
+==> Caveats
+Add the following lines to your ~/.bash_profile:
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+
+Homebrew's own bash completion script has been installed to
+  /usr/local/etc/bash_completion.d
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/bash-completion/1.3_1: 188 files, 605.9K, built in 14 seconds
+xifeiwudeMacBook-Pro:~ xifeiwu$ vi ~/.bashrc 
+xifeiwudeMacBook-Pro:~ xifeiwu$ vi ~/.bash_profile 
