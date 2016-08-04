@@ -1,0 +1,208 @@
+xifei:~ xifei.wu$ brew install mpv
+==> Installing dependencies for mpv: sqlite, openssl, xz, python3, libpng
+==> Installing mpv dependency: sqlite
+==> Downloading https://homebrew.bintray.com/bottles/sqlite-3.13.0.el_capitan.bo
+######################################################################## 100.0%
+==> Pouring sqlite-3.13.0.el_capitan.bottle.tar.gz
+==> Caveats
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+OS X provides an older sqlite3.
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/sqlite/lib
+    CPPFLAGS: -I/usr/local/opt/sqlite/include
+
+==> Summary
+🍺  /usr/local/Cellar/sqlite/3.13.0: 10 files, 2.9M
+==> Installing mpv dependency: openssl
+==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2h_1.el_capitan
+######################################################################## 100.0%
+==> Pouring openssl-1.0.2h_1.el_capitan.bottle.tar.gz
+==> Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2h_1: 1,691 files, 12M
+==> Installing mpv dependency: xz
+==> Downloading https://homebrew.bintray.com/bottles/xz-5.2.2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring xz-5.2.2.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/xz/5.2.2: 91 files, 1.4M
+==> Installing mpv dependency: python3
+==> Downloading https://homebrew.bintray.com/bottles/python3-3.5.1.el_capitan.bottle.3.tar.gz
+######################################################################## 100.0%
+==> Pouring python3-3.5.1.el_capitan.bottle.3.tar.gz
+==> /usr/local/Cellar/python3/3.5.1/bin/python3 -s setup.py --no-user-cfg install --force --verbose --insta
+Warning: The post-install step did not complete successfully
+You can try again using `brew postinstall python3`
+==> Caveats
+Pip and setuptools have been installed. To update them
+  pip3 install --upgrade pip setuptools
+
+You can install Python packages with
+  pip3 install <package>
+
+They will install into the site-package directory
+  /usr/local/lib/python3.5/site-packages
+
+See: https://github.com/Homebrew/brew/blob/master/share/doc/homebrew/Homebrew-and-Python.md
+
+.app bundles were installed.
+Run `brew linkapps python3` to symlink these to /Applications.
+==> Summary
+🍺  /usr/local/Cellar/python3/3.5.1: 2,915 files, 44.7M
+==> Installing mpv dependency: libpng
+==> Downloading https://homebrew.bintray.com/bottles/libpng-1.6.21.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libpng-1.6.21.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/libpng/1.6.21: 25 files, 1.2M
+==> Installing mpv dependency: freetype
+==> Downloading https://homebrew.bintray.com/bottles/freetype-2.6.3.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring freetype-2.6.3.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/freetype/2.6.3: 61 files, 2.5M
+==> Installing mpv dependency: gettext
+==> Downloading https://homebrew.bintray.com/bottles/gettext-0.19.7.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring gettext-0.19.7.el_capitan.bottle.tar.gz
+==> Caveats
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+OS X provides the BSD gettext library and some software gets confused if both are in the library path.
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/gettext/lib
+    CPPFLAGS: -I/usr/local/opt/gettext/include
+
+==> Summary
+🍺  /usr/local/Cellar/gettext/0.19.7: 1,934 files, 16.7M
+==> Installing mpv dependency: libffi
+==> Downloading https://homebrew.bintray.com/bottles/libffi-3.0.13.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libffi-3.0.13.el_capitan.bottle.tar.gz
+==> Caveats
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+Some formulae require a newer version of libffi.
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/libffi/lib
+
+==> Summary
+🍺  /usr/local/Cellar/libffi/3.0.13: 15 files, 374.6K
+==> Installing mpv dependency: glib
+==> Downloading https://homebrew.bintray.com/bottles/glib-2.46.2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring glib-2.46.2.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/glib/2.46.2: 426 files, 22.4M
+==> Installing mpv dependency: pcre
+==> Downloading https://homebrew.bintray.com/bottles/pcre-8.38.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring pcre-8.38.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/pcre/8.38: 203 files, 5.4M
+==> Installing mpv dependency: fribidi
+==> Downloading https://homebrew.bintray.com/bottles/fribidi-0.19.7_1.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring fribidi-0.19.7_1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/fribidi/0.19.7_1: 61 files, 377.5K
+==> Installing mpv dependency: pkg-config
+==> Downloading https://homebrew.bintray.com/bottles/pkg-config-0.29.1.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring pkg-config-0.29.1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/pkg-config/0.29.1: 10 files, 627.2K
+==> Installing mpv dependency: fontconfig
+==> Downloading https://homebrew.bintray.com/bottles/fontconfig-2.11.1_2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring fontconfig-2.11.1_2.el_capitan.bottle.tar.gz
+==> Regenerating font cache, this may take a while
+==> /usr/local/Cellar/fontconfig/2.11.1_2/bin/fc-cache -frv
+Warning: The post-install step did not complete successfully
+You can try again using `brew postinstall fontconfig`
+==> Summary
+🍺  /usr/local/Cellar/fontconfig/2.11.1_2: 450 files, 2.9M
+==> Installing mpv dependency: pixman
+==> Downloading https://homebrew.bintray.com/bottles/pixman-0.34.0.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring pixman-0.34.0.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/pixman/0.34.0: 12 files, 1.2M
+==> Installing mpv dependency: cairo
+==> Downloading https://homebrew.bintray.com/bottles/cairo-1.14.6_1.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring cairo-1.14.6_1.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/cairo/1.14.6_1: 118 files, 5.9M
+==> Installing mpv dependency: gobject-introspection
+==> Downloading https://homebrew.bintray.com/bottles/gobject-introspection-1.46.0_1.el_capitan.bottle.1.tar
+######################################################################## 100.0%
+==> Pouring gobject-introspection-1.46.0_1.el_capitan.bottle.1.tar.gz
+🍺  /usr/local/Cellar/gobject-introspection/1.46.0_1: 199 files, 9.7M
+==> Installing mpv dependency: icu4c
+==> Downloading https://homebrew.bintray.com/bottles/icu4c-57.1.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring icu4c-57.1.el_capitan.bottle.tar.gz
+==> Caveats
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+OS X provides libicucore.dylib (but nothing else).
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/icu4c/lib
+    CPPFLAGS: -I/usr/local/opt/icu4c/include
+
+==> Summary
+🍺  /usr/local/Cellar/icu4c/57.1: 265 files, 65.0M
+==> Installing mpv dependency: harfbuzz
+==> Downloading https://homebrew.bintray.com/bottles/harfbuzz-1.2.6.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring harfbuzz-1.2.6.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/harfbuzz/1.2.6: 123 files, 4.6M
+==> Installing mpv dependency: libass
+==> Downloading https://homebrew.bintray.com/bottles/libass-0.13.2.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring libass-0.13.2.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/libass/0.13.2: 9 files, 502.0K
+==> Installing mpv dependency: x264
+==> Downloading https://homebrew.bintray.com/bottles/x264-r2668.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring x264-r2668.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/x264/r2668: 10 files, 3.3M
+==> Installing mpv dependency: lame
+==> Downloading https://homebrew.bintray.com/bottles/lame-3.99.5.el_capitan.bottle.1.tar.gz
+######################################################################## 100.0%
+==> Pouring lame-3.99.5.el_capitan.bottle.1.tar.gz
+🍺  /usr/local/Cellar/lame/3.99.5: 26 files, 2M
+==> Installing mpv dependency: xvid
+==> Downloading https://homebrew.bintray.com/bottles/xvid-1.3.4.el_capitan.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring xvid-1.3.4.el_capitan.bottle.tar.gz
+🍺  /usr/local/Cellar/xvid/1.3.4: 9 files, 1.3M
+==> Installing mpv dependency: ffmpeg
+
